@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Muhammad Yusuf Pradyanto</title>
+
+  <style>
+
+:root{
+  --primary:#06b6d4;
+  --secondary:#38bdf8;
+  --bg:#ecfeff;
+  --card:#ffffff;
+  --text:#082f49;
+  --muted:#475569;
+  --border:#bae6fd;
+  --radius:20px;
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Segoe UI, sans-serif;
+      background:
+      linear-gradient(135deg,#ecfeff,#dbeafe,#f0f9ff);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      background:rgba(8,47,73,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+      z-index:1000;
+    }
+
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:bold;
+      color:#67e8f9;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:1.5rem;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#cbd5e1;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#67e8f9;
+    }
+
+    .hero{
+      max-width:1200px;
+      margin:auto;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:3rem;
+      padding:2rem;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text h1{
+      font-size:3.2rem;
+      margin-bottom:1rem;
+    }
+
+    .highlight{
+      color:var(--primary);
+    }
+
+    .hero-text h2{
+      color:var(--muted);
+      font-weight:500;
+      margin-bottom:1rem;
+    }
+
+    .hero-text p{
+      max-width:650px;
+      color:var(--muted);
+      margin-bottom:2rem;
+      font-size:1.05rem;
+    }
+
+    .buttons{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:0.9rem 1.7rem;
+      border-radius:var(--radius);
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#06b6d4,#38bdf8);
+      color:white;
+      box-shadow:0 0 25px rgba(14,165,233,0.35);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      border:2px solid var(--primary);
+      color:var(--primary);
+      background:white;
+    }
+
+    .btn-outline:hover{
+      background:var(--primary);
+      color:white;
+    }
+
+    .hero-image img{
+      width:350px;
+      height:350px;
+      object-fit:cover;
+      border-radius:50%;
+      border:5px solid var(--primary);
+      box-shadow:0 0 35px rgba(6,182,212,0.45);
+    }
+
+    section{
+      max-width:1100px;
+      margin:auto;
+      padding:5rem 2rem;
+    }
+
+    section h2{
+      font-size:2.3rem;
+      margin-bottom:2rem;
+      color:var(--primary);
+    }
+
+    .card{
+      background:rgba(255,255,255,0.92);
+      border:1px solid var(--border);
+      padding:2rem;
+      border-radius:var(--radius);
+      margin-bottom:2rem;
+      backdrop-filter:blur(10px);
+      box-shadow:0 10px 30px rgba(14,165,233,0.08);
+    }
+
+    .education-item{
+      margin-bottom:1.5rem;
+    }
+
+    .education-item h3{
+      color:var(--text);
+    }
+
+    .education-item p{
+      color:var(--muted);
+    }
+
+    .hobby-container{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .hobby{
+      background:white;
+      border:1px solid var(--border);
+      padding:1rem 1.5rem;
+      border-radius:14px;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(14,165,233,0.06);
+    }
+
+    .hobby:hover{
+      transform:translateY(-5px);
+      border-color:var(--primary);
+      box-shadow:0 10px 25px rgba(14,165,233,0.15);
+    }
+
+    .achievement{
+      margin-bottom:1rem;
+      padding:1rem;
+      background:#e0f2fe;
+      border-left:5px solid var(--primary);
+      border-radius:10px;
+    }
+
+    .contact-item{
+      margin-bottom:1rem;
+      font-size:1.05rem;
+      color:var(--muted);
+    }
+
+    footer{
+      text-align:center;
+      padding:2rem;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+    }
+
+    @media(max-width:900px){
+
+      .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding-top:4rem;
+      }
+
+      .hero-image img{
+        width:260px;
+        height:260px;
+      }
+
+      .hero-text h1{
+        font-size:2.4rem;
+      }
+
+      .buttons{
+        justify-content:center;
+      }
+
+      .nav-links{
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">✨ My Portfolio</div>
+
+      <ul class="nav-links">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#education">Pendidikan</a></li>
+        <li><a href="#hobbies">Hobi</a></li>
+        <li><a href="#achievement">Prestasi</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>Halo, Nama Saya <span class="highlight">Muhammad Yusuf Pradyanto</span></h1>
+
+      <h2>Pelajar dari sekolah SMA Wardaya</h2>
+
+      <p>
+        Saya adalah pelajar dari SMA Wardaya. Saya memiliki kepribadian yang aktif,
+        seru, dan saya memiliki ketertarikan yang bahkan saya jadikan hobby dan ada
+        juga yang saya jadikan sebagai kegiatan yang cukup serius, diantara nya itu
+        ada olahraga, bermain games, bermain gitar dan mendengarkan musik.
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">Lihat Profil</a>
+        <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="FOTO CODING MUHAMMAD X-1.jpeg"
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>Tentang Saya</h2>
+
+    <div class="card">
+      <p>
+        Nama saya adalah Muhammad Yusuf Pradyanto. Saya lahir pada tanggal
+        2 Desember 2009 di Jakarta. Saat ini saya sedang duduk di kelas 10
+        dan menempuh pendidikan jenjang SMA di sekolah SMA Wardaya.
+      </p>
+
+      <br>
+
+      <p>
+        Saya suka melakukan berbagai kegiatan dan hal yang bisa membantu saya
+        untuk berkembang, membantu saya dalam refleksi diri sendiri, baik dalam
+        bidang akademik atau non-akademik. Saya orang nya gampang berinteraksi
+        dengan orang lain, Saya sangat suka bermain games dan bermain gitar serta
+        mendengarkan musik juga.
+      </p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Riwayat Pendidikan</h2>
+
+    <div class="card">
+
+      <div class="education-item">
+        <h3>SD Kartika X-7</h3>
+        <p>2016 - 2022</p>
+      </div>
+
+      <div class="education-item">
+        <h3>SMP Labschool Jakarta</h3>
+        <p>2022 - 2025</p>
+      </div>
+
+      <div class="education-item">
+        <h3>SMA Wardaya</h3>
+        <p>2025 - 2028</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOBBIES -->
+  <section id="hobbies">
+    <h2>Hobi Saya</h2>
+
+    <div class="hobby-container">
+
+      <div class="hobby">
+        ⚽ Bermain Sepak Bola
+      </div>
+
+      <div class="hobby">
+        🎮 Bermain Games
+      </div>
+
+      <div class="hobby">
+        🎶 Mendengarkan dan Mengulik Lagu
+      </div>
+
+      <div class="hobby">
+        🎸 Bermain Gitar
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENT -->
+  <section id="achievement">
+    <h2>My Achievements</h2>
+
+    <div class="card">
+
+      <div class="achievement">
+        🥉 Medali Bronze Mata Pelajaran Bahasa Indonesia Lomba ORC XXIV
+      </div>
+
+      <div class="achievement">
+        🥈 Medali Silver Mata Pelajaran Bahasa Indonesia Lomba ORC XXV
+      </div>
+
+      <div class="achievement">
+        🥇 Medali Gold Mata Pelajaran Bahasa Inggris Lomba ORC XXV
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Kontak Saya</h2>
+
+    <div class="card">
+
+      <div class="contact-item">
+        📞 +62 813-2095-5514
+      </div>
+
+      <div class="contact-item">
+        ✉️ justmuhammad09@gmail.com
+      </div>
+
+      <div class="contact-item">
+        📍 Perumahan Jatibening 1 Jln. Pembangunan 3 Kav. Pembangunan 3 No. 67
+        Jatibening Baru - Bekasi
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Muhammad Yusuf Pradyanto | Built with HTML & CSS
+  </footer>
+
+</body>
+</html>
